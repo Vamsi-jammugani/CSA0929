@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class agecalculation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Current year and eligibility age
+        int currentYear = 2073;
+        int eligibilityAge = 21;
+
+        // Calculate the birth year
+        int birthYear = currentYear - eligibilityAge;
+
+        // Check if the birth year is greater than 2060
+        if (birthYear > 2060) {
+            int yearsBetween = birthYear - 2023;
+            System.out.println("Birth year is after 2060.");
+            System.out.println("Years between vote-eligible year and 2023: " + yearsBetween);
+        } else {
+            // Calculate the median of birth year and 2023
+            int medianYear = (birthYear + 2023) / 2;
+            System.out.println("Birth year is on or before 2060.");
+            System.out.println("Median year between birth year and 2023: " + medianYear);
+        }
+
+        scanner.close();
+    }
+}
