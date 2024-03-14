@@ -1,0 +1,37 @@
+ import java.util.Scanner;
+    public class gud_luck {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int secretNumber = 42; // The secret number to guess
+            int attempts = 0;
+
+            System.out.println("Welcome to the Guessing Game!");
+            System.out.println("Try to guess the secret number.");
+
+            while (true)
+            {
+                System.out.print("Enter your guess: ");
+                int userGuess = scanner.nextInt();
+                attempts++;
+
+                switch (userGuess) {
+                    case 1:
+                        System.out.println("First guess: Too low!");
+                        break;
+                    case 2:
+                        System.out.println("Second guess: Still too low!");
+                        break;
+                    case 3:
+                        System.out.println("Third guess: Getting closer!");
+                        break;
+                    case 42:
+                        System.out.println("Congratulations! You guessed it!");
+                        System.out.println("It took you " + attempts + " attempts.");
+                        return; // Exit the loop
+                    default:
+                        System.out.println("Enter your guess:"); // Invalid input
+                }
+            }
+        }
+    }
+
