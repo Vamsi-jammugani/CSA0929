@@ -1,0 +1,34 @@
+public class enchanced_loop {
+        public static void main(String[] args) {
+            // Define an array of integers
+            int[] numbers = {1, 5, 11, 19};
+
+            // Initialize a counter for prime numbers
+            int primeCount = 0;
+
+            // Iterate through each element in the array
+            for (int number : numbers)
+            {
+                if (isPrime(number))
+                {
+                    primeCount++;
+                }
+            }
+
+            System.out.println("Number of prime numbers in the array: " + primeCount);
+        }
+
+        // Helper method to check if a number is prime
+        public static boolean isPrime(int num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (int i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
