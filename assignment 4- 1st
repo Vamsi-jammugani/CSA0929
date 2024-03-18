@@ -1,0 +1,17 @@
+public class Main {
+    public static int lengthOfLastWord(String s) {
+        // Split the string by spaces
+        String[] words = s.split(" ");
+        
+        // Find the last word
+        String lastWord = words[words.length - 1];
+        
+        // Return the length of the last word
+        return lastWord.length();
+    }
+
+    public static void main(String[] args) {
+        String input = "Hello World";
+        System.out.println("Length of the last word: " + lengthOfLastWord(input));
+    }
+}
