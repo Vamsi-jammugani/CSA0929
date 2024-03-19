@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Factors {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number
+        System.out.print("Given Number: ");
+        int number = scanner.nextInt();
+
+        // Input the value of N
+        System.out.print("N = ");
+        int n = scanner.nextInt();
+
+        // Calculate number of factors
+        int countFactors = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                countFactors++;
+            }
+        }
+
+        // Print the number of factors
+        System.out.println("Number of factors = " + countFactors);
+
+        // Print the nth factor
+        int factorCount = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                factorCount++;
+                if (factorCount == n) {
+                    System.out.println(n + "th factor of " + number + " = " + i);
+                    break;
+                }
+            }
+        }
+
+        scanner.close();
+    }
+}
