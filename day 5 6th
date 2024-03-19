@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class UniquePermutations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number
+        System.out.print("Given Number: ");
+        String numberStr = scanner.nextLine();
+
+        // Convert the number string to an array of characters
+        char[] numberArray = numberStr.toCharArray();
+
+        // Create a set to store unique permutations
+        Set<String> uniquePermutations = new HashSet<>();
+
+        // Generate unique permutations
+        generateUniquePermutations(numberArray, 0, uniquePermutations);
+
+        // Print unique permutations
+        System.out.println("Unique Permutations:");
+        for (String permutation : uniquePermutations) {
+            System.out.println(permutation);
+        }
+
+        scanner.close();
+    }
+
+    // Function to generate unique permutations using backtracking
+    public static void generateUniquePermutations(char[] arr, int index, Set<String> uniquePermutations) {
+        if (index == arr.length) {
+            uniquePermutations.add(new String(arr));
+            return;
+        }
+
+        for (int i = index; i < arr.length; i++) {
+            swap(arr, index, i);
+            generateUniquePermutations(arr, index + 1, uniquePermutations);
+            swap(arr, index, i); // Backtrack
+        }
+    }
+
+    // Function to swap two elements in an array
+    public static void swap(char[] arr, int i, int j) {
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
